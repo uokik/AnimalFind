@@ -10,4 +10,5 @@ AnimalFind - NFC pet identity system
 - [ ] Frontend
 - [ ] QR generation
 - [ ] Ratelimiting
+- [ ] Change the file structure
 and more
