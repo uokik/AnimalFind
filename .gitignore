@@ -7,3 +7,6 @@
 *.dll
 *.so
 *.dylib
+*.env
+.env
+web/

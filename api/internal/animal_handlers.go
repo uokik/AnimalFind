@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	"net/http"
@@ -7,6 +7,12 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 )
+
+var sURL string
+
+func SetConfig(url string) {
+	sURL = url
+}
 
 func GetAnimal(ctx *gin.Context) {
 	identity := ctx.Param("identity")
@@ -61,4 +67,20 @@ func UpdateAnimal(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, gin.H{"status": "Profile updated"})
 
+}
+
+func ActivateAnimal(ctx *gin.Context) {
+	token := ctx.Param("token")
+	var animal AnimalProfile
+
+	if err := DB.Where("activation_token = ?", token).First(&animal).Error; err != nil {
+		ctx.JSON(http.StatusNotFound, gin.H{"error": "Token does not exist"})
+		return
+	}
+
+	if !animal.IsActive {
+		ctx.Redirect(http.StatusTemporaryRedirect, sURL+"/index1.html")
+	} else {
+		ctx.Redirect(http.StatusTemporaryRedirect, sURL+"/index.html")
+	}
 }
