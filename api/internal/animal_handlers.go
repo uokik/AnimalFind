@@ -16,14 +16,24 @@ func SetConfig(url string) {
 
 func GetAnimal(ctx *gin.Context) {
 	identity := ctx.Param("identity")
-	var profile AnimalProfile
+	var dbProfile AnimalProfile
 
-	if err := DB.First(&profile, "id = ?", identity).Error; err != nil {
+	if err := DB.First(&dbProfile, "id = ?", identity).Error; err != nil {
 		ctx.JSON(http.StatusNotFound, gin.H{"error": "Animal not found"})
 		return
 	}
 
-	ctx.JSON(http.StatusOK, profile)
+	response := AnimalProfileResponse{
+        ID:           dbProfile.ID,
+        OwnerID:      dbProfile.OwnerID,
+        Name:         dbProfile.Name,
+        Species:      dbProfile.Species,
+        Contact:      dbProfile.Contact,
+        MedicalNotes: dbProfile.MedicalNotes,
+        Personality:  dbProfile.Personality,
+    }
+
+	ctx.JSON(http.StatusOK, response)
 }
 
 func AddAnimal(ctx *gin.Context) {
@@ -79,8 +89,8 @@ func ActivateAnimal(ctx *gin.Context) {
 	}
 
 	if !animal.IsActive {
-		ctx.Redirect(http.StatusTemporaryRedirect, sURL+"/index1.html")
+		ctx.Redirect(http.StatusTemporaryRedirect, sURL+"/a/"+token)
 	} else {
-		ctx.Redirect(http.StatusTemporaryRedirect, sURL+"/index.html")
+		ctx.Redirect(http.StatusTemporaryRedirect, sURL+"/profile/"+animal.ID)
 	}
 }

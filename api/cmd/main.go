@@ -20,7 +20,7 @@ func main() {
 		panic("error loading .env")
 	}
 
-	// here set env
+	// ENV HERE
 	url := os.Getenv("SERVER_URL")
 	fronturl := os.Getenv("FRONT_URL")
 	internal.JwtKey = []byte(os.Getenv("JWT_SECRET"))
@@ -43,7 +43,7 @@ func main() {
 	r.GET("/animal/:identity", internal.GetAnimal)
 	r.POST("/addanimal", internal.AddAnimal)
 	r.POST("/editanimal/:identity", internal.UpdateAnimal)
-	r.POST("/a/:token", internal.ActivateAnimal)
+	r.GET("/a/:token", internal.ActivateAnimal)
 
 	userRoutes := r.Group("/user")
 	userRoutes.Use(middleware.AuthMiddleware())

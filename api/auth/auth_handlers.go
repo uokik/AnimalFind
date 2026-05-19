@@ -47,6 +47,7 @@ func RegisterUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, gin.H{"status": "Zarejestrowano pomyślnie", "uid": newUser.ID})
 }
 
+
 func LoginUser(ctx *gin.Context) {
 	var loginData struct {
 		Email    string `json:"email" binding:"required"`

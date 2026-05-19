@@ -10,8 +10,15 @@ import (
 	"github.com/google/uuid"
 )
 
+var sURL string
+
+func SetConfig(url string) {
+	sURL = url
+}
+
+
 func GenerateToken(ctx *gin.Context) {
-	// dodac sprawdzanie jakiegos klucza here aby nikt nie generowal tokenow
+	// dodac sprawdzanie jakiegos klucza here aby nikt nie generowal tokenow yk
 
 	newToken := "AnimFind-" + randomString(4) + "-" + randomString(4) + "-" + randomString(4)
 	newID := uuid.New().String()
@@ -30,7 +37,7 @@ func GenerateToken(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": "Data generated",
 		"token":  newToken,                           // usunac potem chyba
-		"url":    "https://animalfind/a/" + newToken, // zrobic pozniej z env iwgl aby nie bylo jebania
+		"url":    sURL + "/a/" + newToken, // zrobic pozniej z env iwgl aby nie bylo jebania
 	})
 }
 
