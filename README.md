@@ -1,22 +1,5 @@
-<<<<<<< HEAD
-AnimalFind - NFC pet identity system
 
-## Currently features
-- uuid identification
-- adding pets
-- editing pets
-  
-
-## To-Do
-- [ ] Frontend
-- [ ] QR generation
-- [x] Ratelimiting
-- [x] Change the file structure
-- [x] Auth & middleware
-- [ ] and more
-and more
-=======
-AnimalFind - NFC pet identity system
+# AnimalFind - NFC pet identity system
 
 ## Currently features
 
@@ -34,4 +17,3 @@ AnimalFind - NFC pet identity system
 - [x] Auth
 - [ ] and more
       and more
->>>>>>> 8efb277 (landing page, small fixes)
