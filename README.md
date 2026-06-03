@@ -3,20 +3,41 @@
 
 ## Currently features
 
-- uuid identification
-- adding pets
-- editing pets
-- landing page
+- UUID identification
+- Pet management
+- Public profiles
+- Demo profile
+- Landing page
 
-## To-Do
+  ## Roadmap & To Do
 
-- [ ] Frontend
-- [ ] QR generation
-- [x] Ratelimiting
-- [x] Change the file structure
-- [x] Auth
-- [ ] and more
-      and more
+  ### Frontend
+  - [ ] Make code more responsive
+  - [ ] Add the remaining subpages
+  - [ ] Add smooth transitions and micro animations
 
-<img src="pics_github/landing.png" alt="landing" width="800">
-<img src="pics_github/features.png" alt="features" width="800">
+  ### Backend
+  - [ ] Improve auth system
+  - [ ] Add image uplouds & compress
+
+
+
+
+<details>
+  <summary><b>Click to see screenshots </b></summary>
+<br>
+<table border="0">
+  <tr>
+    <!-- left -->
+    <td width="60%" text-align="center" valign="middle">
+      <img src="pics_github/landing.png" alt="AnimalFind Landing" width="100%" />
+      <br/><br/>
+      <img src="pics_github/features.png" alt="AnimalFind Features" width="100%" />
+    </td>
+    <!-- right -->
+    <td width="50%" text-align="center" valign="middle">
+      <img src="pics_github/demo.png" alt="AnimalFind Demo Pivot" width="100%" />
+    </td>
+  </tr>
+</table>
+</details>
