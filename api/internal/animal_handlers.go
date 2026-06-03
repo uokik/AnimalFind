@@ -24,14 +24,22 @@ func GetAnimal(ctx *gin.Context) {
 	}
 
 	response := AnimalProfileResponse{
-        ID:           dbProfile.ID,
-        OwnerID:      dbProfile.OwnerID,
-        Name:         dbProfile.Name,
-        Species:      dbProfile.Species,
-        Contact:      dbProfile.Contact,
-        MedicalNotes: dbProfile.MedicalNotes,
-        Personality:  dbProfile.Personality,
-    }
+		ID:                dbProfile.ID,
+		Name:              dbProfile.Name,
+		Species:           dbProfile.Species,
+		Breed:             dbProfile.Breed,
+		Contact:           dbProfile.Contact,
+		MedicalNotes:      dbProfile.MedicalNotes,
+		Personality:       dbProfile.Personality,
+		ProfileImageURL:   dbProfile.ProfileImageURL,
+		Sex:               dbProfile.Sex,
+		Age:               dbProfile.Age,
+		City:              dbProfile.City,
+		Medications:       dbProfile.Medications,
+		Allergies:         dbProfile.Allergies,
+		VetInfo:           dbProfile.VetInfo,
+		ChronicConditions: dbProfile.ChronicConditions,
+	}
 
 	ctx.JSON(http.StatusOK, response)
 }

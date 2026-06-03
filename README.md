@@ -17,3 +17,6 @@
 - [x] Auth
 - [ ] and more
       and more
+
+<img src="pics_github/landing.png" alt="landing" width="800">
+<img src="pics_github/features.png" alt="features" width="800">

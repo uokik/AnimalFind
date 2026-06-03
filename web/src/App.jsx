@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Demo from "./pages/Demo";
+import PublicAnimalProfile from "./pages/PublicAnimalProfile";
 // import Login from "./pages/Login";
 // import Register from "./pages/Register";
 // import Activate from "./pages/Activate";
@@ -10,19 +12,19 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Publiczne trasy */}
+        {/* routes*/}
         <Route path="/" element={<Home />} />
+        <Route path="/demo" element={<Demo />} />
         {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> */}
 
-        {/* Kluczowa trasa dla Twojego taga NFC */}
-        {/* Backend w Go przekieruje tutaj: localhost:3000/activate/AnimFind-XXXX */}
+        {/* aktywacja */}
         {/* <Route path="/activate/:token" element={<Activate />} />
 
-        {/* Widok profilu dla znalazcy */}
-        {/* <Route path="/p/:uid" element={<Profile />} />
+        {/* publiczny profil  */}
+        <Route path="/p/:uid" element={<PublicAnimalProfile />} />
 
-        {/* Trasy prywatne (później dodasz tu ProtectedRoute) */}
+        {/* prywatne tu */}
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
       </Routes>
     </Router>

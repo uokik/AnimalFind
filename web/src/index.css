@@ -9,3 +9,9 @@
 body {
   font-family: "Outfit", sans-serif;
 }
+
+:root {
+  --color-bg-main: #F7F3EB;
+  --color-bg-second: #ECEDE3;
+  --color-accent: #738F6D;
+}

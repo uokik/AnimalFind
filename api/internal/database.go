@@ -14,25 +14,42 @@ var (
 )
 
 type AnimalProfile struct {
-	ID              string `gorm:"primaryKey" json:"uid"`
-	ActivationToken string `gorm:"uniqueIndex;not null" json:"activation_token"`
-	IsActive        bool   `gorm:"default:false" json:"is_active"`
-	OwnerID         uint   `json:"owner_id"`
-	Name            string `json:"name"`
-	Species         string `json:"species"`
-	Contact         string `json:"contact"`
-	MedicalNotes    string `json:"medicalnotes"`
-	Personality     string `json:"personality"`
+	ID                string `gorm:"primaryKey" json:"uid"`
+	ActivationToken   string `gorm:"uniqueIndex;not null" json:"activation_token"`
+	IsActive          bool   `gorm:"default:false" json:"is_active"`
+	OwnerID           uint   `json:"owner_id"`
+	Name              string `json:"name"`
+	Species           string `json:"species"`
+	Breed             string `json:"breed"`
+	Contact           string `json:"contact"`
+	MedicalNotes      string `json:"medical_notes"`
+	Personality       string `json:"personality"`
+	ProfileImageURL   string `json:"profile_image_url"`
+	Sex               string `json:"sex"`
+	Age               string `json:"age"`
+	City              string `json:"city"`
+	Medications       string `json:"medications"`
+	Allergies         string `json:"allergies"`
+	VetInfo           string `json:"vet_info"`
+	ChronicConditions string `json:"chronic_conditions"`
 }
 
 type AnimalProfileResponse struct {
-	ID              string `json:"uid"`
-	OwnerID         uint   `json:"owner_id"`
-	Name            string `json:"name"`
-	Species         string `json:"species"`
-	Contact         string `json:"contact"`
-	MedicalNotes    string `json:"medicalnotes"`
-	Personality     string `json:"personality"`
+	ID                string `json:"uid"`
+	Name              string `json:"name"`
+	Species           string `json:"species"`
+	Breed             string `json:"breed"`
+	Contact           string `json:"contact"`
+	MedicalNotes      string `json:"medical_notes"`
+	Personality       string `json:"personality"`
+	ProfileImageURL   string `json:"profile_image_url"`
+	Sex               string `json:"sex"`
+	Age               string `json:"age"`
+	City              string `json:"city"`
+	Medications       string `json:"medications"`
+	Allergies         string `json:"allergies"`
+	VetInfo           string `json:"vet_info"`
+	ChronicConditions string `json:"chronic_conditions"`
 }
 
 type ChangePasswordInput struct {

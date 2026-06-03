@@ -20,7 +20,7 @@ func main() {
 		panic("error loading .env")
 	}
 
-	// ENV HERE
+	// ENV HERE (spaghetti do poprawy mysle
 	url := os.Getenv("SERVER_URL")
 	fronturl := os.Getenv("FRONT_URL")
 	internal.JwtKey = []byte(os.Getenv("JWT_SECRET"))
@@ -32,7 +32,7 @@ func main() {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5500", "http://localhost:5173"},
+		AllowOrigins:     []string{"http://localhost:5500", "http://localhost:5173", "http://192.168.1.10:5173"},
 		AllowMethods:     []string{"POST", "GET", "OPTIONS", "PUT", "DELETE"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
@@ -62,8 +62,8 @@ func main() {
 	adminRoutes.Use(middleware.AuthMiddleware())
 	adminRoutes.Use(middleware.AdminMiddleware())
 	{
-		adminRoutes.GET("/uokik/generate", pkg.GenerateToken)
+		adminRoutes.GET("/generate", pkg.GenerateToken)
 	}
 
-	r.Run(":7070")
+	r.Run("0.0.0.0:7070")
 }
